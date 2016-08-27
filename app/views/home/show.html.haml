@@ -1,0 +1,37 @@
+.container
+
+	.headerNav
+		.headerNavLogo
+			%img{ src: "http://placehold.it/20x30" }
+		.headerNavUser
+			.headerNavUser__name Anna
+			.headerNavUser__image 
+				%img{ src: "http://placehold.it/20x30"}
+	
+	.filterGroup
+		.filterItems
+			.filterItem
+				.filterItem__header Dates
+				.filterItem__options
+					%input{ type: "text", placeholder: "start date" }
+					%input{ type: "text", placeholder: "end date" }
+					%input{ type: "text", placeholder: "number of guests" }
+			.filterItem
+				.filterItem__header Room Type
+				.filterItem__options
+					%input{ type: "checkbox" } Shared
+					%input{ type: "checkbox" } Private Room
+					%input{ type: "checkbox" } House
+			.filterItem
+				.filterItem__header Price Range
+				.filterItem__scrollBar
+
+	.placeLists
+		.placelists__header
+			.placelists__headerButton
+			.placelists__headerText
+		.placelists__body
+		- @places.each do |place|
+			.placelists__bodyItem
+				.placelists__bodyItemImage
+					%img{ src: place.image_url}
