@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+	namespace :api do
+		get "hosts/:id", to: "hosts#show"
+		get "places/search", to: "places#search"
+	end
 end
