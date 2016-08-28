@@ -1,4 +1,4 @@
-.container{ data: { show_listing: true } }
+.container{ data: { show_listing: true, url: api_places_search_path } }
 	.headerNav
 		.headerNavLogo
 			%img{ src: "http://placehold.it/20x30" }
@@ -9,7 +9,7 @@
 	
 	.filterGroup
 		.filterItems
-			.filterItem
+			.filterItem{ "v-show" => "false" }
 				.filterItem__header Dates
 				.filterItem__options
 					%input{ type: "text", placeholder: "start date" }
@@ -21,7 +21,7 @@
 					%input{ type: "checkbox", value: "shared", "v-model" => "placeTypes" } Shared
 					%input{ type: "checkbox", value: "private_room", "v-model" => "placeTypes" } Private Room
 					%input{ type: "checkbox", value: "house", "v-model" => "placeTypes" } House
-			.filterItem
+			.filterItem{ "v-show" => "false" }
 				.filterItem__header Price Range
 				.filterItem__scrollBar
 
@@ -29,8 +29,7 @@
 		.placelists__header
 			.placelists__headerButton
 			.placelists__headerText
-		.placelists__body
-		- @places.each do |place|
+		.placelists__body{ "v-for" => "place in places"}
 			.placelists__bodyItem
 				.placelists__bodyItemImage
-					%img{ src: place.image_url}
+					{{ place.image_url }}

@@ -10,7 +10,7 @@ module Api
 			elsif price_params.present?
 				render json: Place.where("price <= ?", price_params[:max_price])
 			else
-				head 501
+				render json: Place.all
 			end
 			# render json: Host.find(params[:id])
 		end
