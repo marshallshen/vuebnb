@@ -1,5 +1,4 @@
-.container
-
+.container{ data: { show_listing: true } }
 	.headerNav
 		.headerNavLogo
 			%img{ src: "http://placehold.it/20x30" }
@@ -19,9 +18,9 @@
 			.filterItem
 				.filterItem__header Room Type
 				.filterItem__options
-					%input{ type: "checkbox" } Shared
-					%input{ type: "checkbox" } Private Room
-					%input{ type: "checkbox" } House
+					%input{ type: "checkbox", value: "shared", "v-model" => "placeTypes" } Shared
+					%input{ type: "checkbox", value: "private_room", "v-model" => "placeTypes" } Private Room
+					%input{ type: "checkbox", value: "house", "v-model" => "placeTypes" } House
 			.filterItem
 				.filterItem__header Price Range
 				.filterItem__scrollBar
