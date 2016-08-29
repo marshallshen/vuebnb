@@ -2,8 +2,26 @@ var app = new Vue({
 	el: $('[data-show-listing]')[0],
 	data: {
 		placeTypes: [],
-		places: [],
+		places: []
 	},
+
+	computed: {
+		filteredPlaces: function(){
+			if (this.placeTypes.length == 0 ){
+				return this.places
+			} else {
+				var filteredPlaces = []
+				for(i = 0; i < this.places.length; i ++) {
+					var place = this.places[i]
+					if (this.placeTypes.includes(place.place_type)){
+						filteredPlaces.push(place)
+					}
+				}
+				return filteredPlaces
+			}
+		}
+	},
+
 	methods: {
 		fetchPlaces: function(params) {
 			$.ajax({

@@ -29,7 +29,8 @@
 		.placelists__header
 			.placelists__headerButton
 			.placelists__headerText
-		.placelists__body{ "v-for" => "place in places"}
+		.placelists__body{ "v-for" => "place in filteredPlaces"}
 			.placelists__bodyItem
 				.placelists__bodyItemImage
 					{{ place.image_url }}
+					{{ place.place_type }}
