@@ -10,23 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160827193655) do
+ActiveRecord::Schema.define(version: 20_160_827_193_655) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension 'plpgsql'
 
-  create_table "hosts", force: :cascade do |t|
-    t.string   "name"
-    t.string   "profile_url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+  create_table 'hosts', force: :cascade do |t|
+    t.string   'name'
+    t.string   'profile_url'
+    t.datetime 'created_at',  null: false
+    t.datetime 'updated_at',  null: false
   end
 
-  create_table "places", force: :cascade do |t|
-    t.string   "city"
-    t.integer  "price"
-    t.string   "place_type"
-    t.integer  "host_id"
-    t.string   "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'places', force: :cascade do |t|
+    t.string   'city'
+    t.integer  'price'
+    t.string   'place_type'
+    t.integer  'host_id'
+    t.string   'image_url'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
-
 end

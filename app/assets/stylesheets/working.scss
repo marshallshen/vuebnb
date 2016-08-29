@@ -2,12 +2,15 @@
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	background-color: $color--lightGray;
-	height: 65px;
+	background-color: $color--primaryBlue;
+	height: 45px;
 }
 
 .headerNavLogo {
-	// placeholder
+	color: $color--white;
+	font-size: $font--large;
+	padding-top: ($gutter * 0.75);
+	padding-left: $gutter;
 }
 
 .headerNavUser {
@@ -15,7 +18,8 @@
 }
 
 .headerNavUser__name {
-	// placeholder
+	margin-right: $gutter;
+	padding-top: $gutter;
 }
 
 .headerNavUser__image {
@@ -23,14 +27,25 @@
 }
 
 .filterGroup {
-	// placeholder
+	margin-top: $gutter * 2;
+	margin-bottom: $gutter * 2;
+	margin-left: 30%;
+	border: 1px solid $color--black;
+	width: 40%;
 }
 
 .filterItems {
-	// placeholder
+	display: flex;
+	flex-direction: column;
+	padding: ($gutter * 2) 0px;
 }
 
-.filterItems__header {
+.filterItem {
+	display: flex;
+	margin: 0 0 $gutter ($gutter * 5);
+}
+
+.filterItem__header {
 	// placeholder
 }
 
@@ -39,29 +54,47 @@
 }
 
 .placeLists {
+	background-color: $color--lightBlue;
+	padding-top: $gutter * 2;
+}
+
+.placelists__header {
+	display: flex;
+	justify-content: space-around;
+	// TODO: refactor modules (body measures)
+	width: 40%;
+	margin-left: 30%;
+}
+
+.placelists__headerButton {
 	// placeholder
 }
 
-.placesLists__header {
+.placelists__headerText {
 	// placeholder
 }
 
-.placesLists__headerButton {
-	// placeholder
-}
-
-.placesLists__headerText {
-	// placeholder
-}
-
-.placeLists__body {
-	// placeholder
+.placelists__body {
+	display: flex;
+	flex-wrap: wrap;
+	// TODO: refactor modules (body measures)
+	margin-left: 15%;
+	width: 80%;
+	padding-top: $gutter * 2;
+	padding-bottom: $gutter * 5;
 }
 
 .placeLists__bodyItem {
-	// placeholder
+	background-color: $color--white;
 }
 
 .placeLists__bodyItemImage {
-	// placeholder
+	width: 50px;
+	height: 100px;
+
+	margin-right: $gutter;
+}
+
+.placelists__bodyItemText {
+	padding-left: $gutter;
 }

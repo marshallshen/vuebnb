@@ -1,15 +1,14 @@
 .container{ data: { show_listing: true, url: api_places_search_path } }
 	.headerNav
-		.headerNavLogo
-			%img{ src: "http://placehold.it/20x30" }
+		.headerNavLogo VueBnb
 		.headerNavUser
 			.headerNavUser__name Anna
 			.headerNavUser__image 
-				%img{ src: "http://placehold.it/20x30"}
-	
+				%img{ src: "http://placehold.it/45x45"}
+
 	.filterGroup
 		.filterItems
-			.filterItem{ "v-show" => "false" }
+			.filterItem
 				.filterItem__header Dates
 				.filterItem__options
 					%input{ type: "text", placeholder: "start date" }
@@ -21,16 +20,16 @@
 					%input{ type: "checkbox", value: "shared", "v-model" => "placeTypes" } Shared
 					%input{ type: "checkbox", value: "private_room", "v-model" => "placeTypes" } Private Room
 					%input{ type: "checkbox", value: "house", "v-model" => "placeTypes" } House
-			.filterItem{ "v-show" => "false" }
-				.filterItem__header Price Range
-				.filterItem__scrollBar
 
 	.placeLists
 		.placelists__header
-			.placelists__headerButton
-			.placelists__headerText
-		.placelists__body{ "v-for" => "place in filteredPlaces"}
-			.placelists__bodyItem
+			%button.placelists__headerButton More Filters
+			.placelists__headerText {{ filteredPlaces.length }} Places Found
+		.placelists__body
+			.placeLists__bodyItem{ "v-for" => "place in filteredPlaces"}
 				.placelists__bodyItemImage
-					{{ place.image_url }}
-					{{ place.place_type }}
+					%img{ src: "{{ place.image_url }}"}
+				.placelists__bodyItemText
+					%p Place Type: {{ place.place_type}}
+					%p Price: {{ place.price }}
+					%p City: {{ place.city }}

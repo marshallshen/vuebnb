@@ -1,5 +1,5 @@
 var app = new Vue({
-	el: $('[data-show-listing]')[0],
+	el: $("[data-show-listing]")[0],
 	data: {
 		placeTypes: [],
 		places: []
@@ -8,16 +8,16 @@ var app = new Vue({
 	computed: {
 		filteredPlaces: function(){
 			if (this.placeTypes.length == 0 ){
-				return this.places
+				return this.places;
 			} else {
-				var filteredPlaces = []
-				for(i = 0; i < this.places.length; i ++) {
-					var place = this.places[i]
+				var filteredPlaces = [];
+				for(var i = 0; i < this.places.length; i ++) {
+					var place = this.places[i];
 					if (this.placeTypes.includes(place.place_type)){
-						filteredPlaces.push(place)
+						filteredPlaces.push(place);
 					}
 				}
-				return filteredPlaces
+				return filteredPlaces;
 			}
 		}
 	},
@@ -26,13 +26,13 @@ var app = new Vue({
 		fetchPlaces: function(params) {
 			$.ajax({
 				method: "GET",
-				url: $('[data-show-listing]').data("url"),
+				url: $("[data-show-listing]").data("url"),
 				data: { params }
 			}).done(function(response){
-				app.$set("places", response)
-			})
+				app.$set("places", response);
+			});
 		}
 	}
-})
+});
 
-app.fetchPlaces()
+app.fetchPlaces();
